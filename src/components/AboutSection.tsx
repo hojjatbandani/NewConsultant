@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 export default function AboutSection() {
@@ -41,12 +42,15 @@ export default function AboutSection() {
             {t.about.paragraph}
           </p>
 
-          <button className="flex items-center gap-2.5 pl-6 pr-2 py-2 rounded-full bg-radial from-[#3376C5] to-[#1355A3] text-white font-normal text-sm shadow-lg shadow-blue-900/20">
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2.5 pl-6 pr-2 py-2 rounded-full bg-radial from-[#3376C5] to-[#1355A3] text-white font-normal text-sm shadow-lg shadow-blue-900/20"
+          >
             {t.about.button}
             <span className="w-8 h-8 rounded-full border border-blue-400/50 flex items-center justify-center">
               <ArrowIcon />
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

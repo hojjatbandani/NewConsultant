@@ -30,9 +30,22 @@ const iranSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Horizons Statistical Consulting",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://horizons-consulting.example",
+  ),
+  title: {
+    default: "Horizons Statistical Consulting",
+    template: "%s",
+  },
   description:
     "Horizons Statistical Consulting is a company specializing in providing statistical and research services.",
+  keywords: [
+    "statistical consulting",
+    "research services",
+    "data analysis",
+    "survey research",
+    "data collection",
+  ],
 };
 
 export default function RootLayout({

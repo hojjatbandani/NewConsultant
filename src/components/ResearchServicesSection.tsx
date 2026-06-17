@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { serviceSlugs } from "@/data/services";
 
 // Structural data only (display text comes from the dictionary, by index).
 const services = [
@@ -55,13 +57,18 @@ export default function ResearchServicesSection() {
         {/* ── 3-column card grid ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((s, i) => (
-            <ServiceCard
+            <Link
               key={s.id}
-              num={s.id}
-              icon={s.icon}
-              title={t.research.cards[i].title}
-              desc={t.research.cards[i].desc}
-            />
+              href={`/services/${serviceSlugs[i]}`}
+              className="block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+            >
+              <ServiceCard
+                num={s.id}
+                icon={s.icon}
+                title={t.research.cards[i].title}
+                desc={t.research.cards[i].desc}
+              />
+            </Link>
           ))}
         </div>
       </div>

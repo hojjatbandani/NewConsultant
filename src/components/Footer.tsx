@@ -1,28 +1,26 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 const navLinks = [
-  { key: "home", id: "home" },
-  { key: "about", id: "about" },
-  { key: "services", id: "services" },
-  { key: "research", id: "research" },
-  { key: "partners", id: "partners" },
-  { key: "contact", id: "contact" },
+  { key: "home", kind: "section", target: "home" },
+  { key: "about", kind: "route", target: "/about" },
+  { key: "services", kind: "section", target: "services" },
+  { key: "research", kind: "section", target: "research" },
+  { key: "partners", kind: "section", target: "partners" },
+  { key: "contact", kind: "route", target: "/contact" },
 ] as const;
 
-function scrollToSection(id: string) {
-  if (id === "home") {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  } else {
-    document
-      .getElementById(id)
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+function sectionHref(target: string, pathname: string) {
+  if (target === "home") return pathname === "/" ? "#home" : "/";
+  return pathname === "/" ? `#${target}` : `/#${target}`;
 }
 
 export default function Footer() {
   const { t } = useLanguage();
+  const pathname = usePathname();
 
   return (
     <footer className="bg-[#0d0d0d] text-white">
@@ -59,18 +57,18 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3">
             {navLinks.map((link) => (
-              <li key={link.id}>
-                <a
-                  href={`#${link.id}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(link.id);
-                  }}
+              <li key={link.key}>
+                <Link
+                  href={
+                    link.kind === "route"
+                      ? link.target
+                      : sectionHref(link.target, pathname)
+                  }
                   className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0" />
                   {t.nav[link.key]}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

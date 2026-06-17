@@ -1,89 +1,89 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/i18n/LanguageProvider";
+
+// Partner logos live in /public/images/logos. Add/remove files here to
+// change the strip.
+const logos = [
+  "logo.png",
+  "kaggle.png",
+  "omanoil.png",
+  "omantel.png",
+  "radisson.png",
+  "simplilearn.png",
+  "university.png",
+  "vezart amal.png",
+  "NfeVu.png",
+  "logo2.jpg",
+  "logo3.jpg",
+  "logo4.jpg",
+  "logo5.jpg",
+  "logo6.jpg",
+  "logo7.jpg",
+  "logo8.jpg",
+  "logo9.jpg",
+  "logo10.jpg",
+  "logo11.jpg",
+];
+
+// Split into two rows that scroll in opposite directions.
+const half = Math.ceil(logos.length / 2);
+const rowOne = logos.slice(0, half);
+const rowTwo = logos.slice(half);
 
 export default function SuccessPartnersSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="partners" className="bg-white py-20 px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="partners" className="bg-white py-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8">
         {/* Heading */}
         <h2 className="text-5xl font-light text-gray-900 text-center mb-14 tracking-tight">
           {t.partners.heading}
         </h2>
+      </div>
 
-        {/* Logo strip */}
-        <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-10 text-gray-400">
-          {/* DocuSign */}
-          <div className="flex items-center gap-2">
-            <BurstIcon />
-            <span className="text-2xl font-semibold tracking-tight text-gray-500">
-              DocuSign
-            </span>
-          </div>
-
-          {/* maze */}
-          <div className="flex items-center gap-2">
-            <WaveIcon />
-            <span className="text-3xl font-bold lowercase tracking-tight text-gray-500">
-              maze
-            </span>
-          </div>
-
-          {/* Culture Amp */}
-          <span className="text-2xl font-semibold tracking-tight text-gray-500">
-            Culture Amp
-          </span>
-
-          {/* HelloSign */}
-          <span className="text-2xl font-bold uppercase tracking-wide text-gray-500">
-            HelloSign
-          </span>
-
-          {/* attentive */}
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-gray-500" />
-            <span className="text-2xl font-medium lowercase tracking-tight text-gray-500">
-              attentive
-            </span>
-          </div>
-        </div>
+      {/* Two opposite-direction marquee rows */}
+      <div
+        className="marquee-viewport relative w-full flex flex-col gap-8"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+        }}
+      >
+        <MarqueeRow logos={rowOne} />
+        <MarqueeRow logos={rowTwo} reverse />
       </div>
     </section>
   );
 }
 
-/* ─── Brand marks ─── */
+function MarqueeRow({ logos, reverse }: { logos: string[]; reverse?: boolean }) {
+  // Render the list twice so the -50% animation loops seamlessly.
+  const strip = [...logos, ...logos];
 
-function BurstIcon() {
   return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-gray-500">
-      <g stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
-        <line x1="12" y1="3" x2="12" y2="7" />
-        <line x1="12" y1="17" x2="12" y2="21" />
-        <line x1="3" y1="12" x2="7" y2="12" />
-        <line x1="17" y1="12" x2="21" y2="12" />
-        <line x1="5.6" y1="5.6" x2="8.4" y2="8.4" />
-        <line x1="15.6" y1="15.6" x2="18.4" y2="18.4" />
-        <line x1="5.6" y1="18.4" x2="8.4" y2="15.6" />
-        <line x1="15.6" y1="8.4" x2="18.4" y2="5.6" />
-      </g>
-      <circle cx="12" cy="12" r="2.4" fill="currentColor" />
-    </svg>
-  );
-}
-
-function WaveIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" className="text-gray-500">
-      <path
-        d="M3 15 C6 9, 9 9, 12 15 C15 21, 18 21, 21 15"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        fill="none"
-      />
-    </svg>
+    <ul
+      className={`marquee-track flex items-center gap-14 sm:gap-20${
+        reverse ? " is-reverse" : ""
+      }`}
+    >
+      {strip.map((file, i) => (
+        <li key={i} className="shrink-0" aria-hidden={i >= logos.length}>
+          <div className="relative h-20 sm:h-24 w-44 sm:w-52">
+            <Image
+              src={`/images/logos/${file}`}
+              alt={i < logos.length ? `Partner logo` : ""}
+              fill
+              sizes="208px"
+              className="object-contain grayscale opacity-70 transition duration-300 hover:grayscale-0 hover:opacity-100"
+            />
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 }

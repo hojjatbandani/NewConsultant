@@ -29,3 +29,34 @@ html[dir="rtl"] h5,
 html[dir="rtl"] h6 {
   font-family: var(--font-arabic), Tahoma, sans-serif;
 }
+
+/* Continuous logo marquee (Success Partners). The track holds two identical
+   copies of the logo list, so translating it by -50% loops seamlessly. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 55s linear infinite;
+  width: max-content;
+}
+
+/* Second row travels the opposite way. */
+.marquee-track.is-reverse {
+  animation-direction: reverse;
+}
+
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
