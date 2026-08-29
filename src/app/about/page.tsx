@@ -26,10 +26,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white overflow-x-clip">
+    <>
       <Navbar />
-      <AboutPageContent />
+      <main id="main-content" className="min-h-screen bg-white">
+        <AboutPageContent />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

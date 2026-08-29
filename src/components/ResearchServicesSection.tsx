@@ -30,26 +30,26 @@ export default function ResearchServicesSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="research" className="bg-white py-20 px-8">
+    <section id="research" className="bg-white py-16 sm:py-20 px-5 sm:px-8">
       <div className="max-w-7xl mx-auto">
         {/* ── Header ── */}
         <div className="flex flex-col lg:flex-row lg:items-start gap-6 mb-14">
           <div className="flex-1">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 mb-5">
-              <span className="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center">
-                <HeartOutlineIcon className="w-4 h-4 text-rose-400" />
+              <span className="w-8 h-8 rounded-full bg-accent-100 flex items-center justify-center">
+                <HeartOutlineIcon className="w-4 h-4 text-accent-600" />
               </span>
-              <span className="text-sm text-gray-500 font-medium">
+              <span className="text-sm text-gray-600 font-medium">
                 {t.research.badge}
               </span>
             </div>
-            <h2 className="text-5xl font-bold text-gray-900 tracking-tight">
+            <h2 className="section-title text-gray-900">
               {t.research.heading}
             </h2>
           </div>
 
-          <p className="flex-1 lg:max-w-xs text-gray-500 text-sm leading-relaxed lg:pt-2">
+          <p className="flex-1 lg:max-w-xs text-gray-600 text-sm leading-relaxed lg:pt-2">
             {t.research.description}
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function ResearchServicesSection() {
             <Link
               key={s.id}
               href={`/services/${serviceSlugs[i]}`}
-              className="block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+              className="block rounded-2xl"
             >
               <ServiceCard
                 num={s.id}
@@ -93,13 +93,13 @@ function ServiceCard({
     <div className="group rounded-2xl p-6 flex flex-col gap-4 border bg-white border-gray-100 shadow-sm transition-all duration-300 hover:bg-gray-900 hover:border-gray-800 hover:shadow-lg hover:-translate-y-1">
       {/* Number + icon row */}
       <div className="flex items-center justify-between">
-        <span className="text-sm font-medium tabular-nums text-gray-400 transition-colors">
+        <span className="text-sm font-medium tabular-nums text-gray-500 transition-colors">
           {String(num).padStart(2, "0")}
         </span>
-        <span className="w-10 h-10 rounded-full flex items-center justify-center bg-rose-100 group-hover:bg-violet-600 transition-colors duration-300">
+        <span className="w-10 h-10 rounded-full flex items-center justify-center bg-accent-100 group-hover:bg-brand-500 transition-colors duration-300">
           <ServiceIcon
             name={icon}
-            className="w-5 h-5 text-rose-400 group-hover:text-white transition-colors duration-300"
+            className="w-5 h-5 text-accent-600 group-hover:text-white transition-colors duration-300"
           />
         </span>
       </div>
@@ -110,7 +110,7 @@ function ServiceCard({
       </h3>
 
       {/* Description */}
-      <p className="text-sm leading-relaxed text-gray-500 group-hover:text-gray-300 transition-colors duration-300">
+      <p className="text-sm leading-relaxed text-gray-600 group-hover:text-gray-300 transition-colors duration-300">
         {desc}
       </p>
     </div>

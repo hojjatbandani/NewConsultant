@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Raleway } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -48,6 +49,13 @@ export const metadata: Metadata = {
   ],
 };
 
+// `maximumScale`/`userScalable` are deliberately left at their defaults so the
+// page stays pinch-zoomable (WCAG 1.4.4). Only the theme color is set here.
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  colorScheme: "light",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -57,7 +65,10 @@ export default function RootLayout({
       className={`${inter.variable} ${raleway.variable} ${iranSans.variable}`}
     >
       <body className="min-h-screen bg-white antialiased">
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          {children}
+          <FloatingWhatsApp />
+        </LanguageProvider>
       </body>
     </html>
   );

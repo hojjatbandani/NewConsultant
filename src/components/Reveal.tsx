@@ -35,7 +35,9 @@ export default function Reveal({
   return (
     <div
       ref={ref}
-      className={`motion-safe:transition-all motion-safe:duration-1000 ease-out ${
+      // 1000ms read as a lag on fast scrolls; 600ms still registers as a
+      // reveal without making the reader wait for the section to arrive.
+      className={`motion-safe:transition-all motion-safe:duration-600 ease-out ${
         shown
           ? "opacity-100 translate-y-0"
           : "motion-safe:opacity-0 motion-safe:translate-y-6"

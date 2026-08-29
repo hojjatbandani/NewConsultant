@@ -40,10 +40,12 @@ export default async function ServicePage({ params }: Params) {
   if (!service) notFound();
 
   return (
-    <main className="min-h-screen bg-white overflow-x-clip">
+    <>
       <Navbar />
-      <ServiceDetail slug={slug} />
+      <main id="main-content" className="min-h-screen bg-white">
+        <ServiceDetail slug={slug} />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -18,29 +18,29 @@ export default function ServiceDetail({ slug }: { slug: string }) {
     .map((s) => ({ slug: s.slug, title: s[lang].title }));
 
   return (
-    <article className="max-w-5xl mx-auto px-6 sm:px-8 py-12 lg:py-16">
+    <article className="max-w-5xl mx-auto px-5 sm:px-8 py-12 lg:py-16">
       {/* Breadcrumb */}
-      <nav className="flex flex-wrap items-center gap-2 text-sm text-gray-400 mb-8">
-        <Link href="/" className="hover:text-blue-900 transition-colors">
+      <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-gray-500 mb-8">
+        <Link href="/" className="hover:text-brand-700 transition-colors">
           {t.serviceDetail.breadcrumbHome}
         </Link>
         <span aria-hidden>/</span>
-        <Link href="/#research" className="hover:text-blue-900 transition-colors">
+        <Link href="/#research" className="hover:text-brand-700 transition-colors">
           {t.serviceDetail.breadcrumbServices}
         </Link>
         <span aria-hidden>/</span>
-        <span className="text-gray-600">{c.title}</span>
+        <span className="text-gray-900 font-medium" aria-current="page">{c.title}</span>
       </nav>
 
       {/* Hero */}
       <header className="mb-12">
-        <span className="inline-block text-sm font-semibold tabular-nums text-violet-600 mb-3">
+        <span className="inline-block text-sm font-semibold tabular-nums text-brand-600 mb-3">
           {String(service.num).padStart(2, "0")}
         </span>
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight leading-tight">
           {c.title}
         </h1>
-        <p className="mt-4 text-lg text-gray-500 leading-relaxed max-w-3xl">
+        <p className="mt-4 text-lg text-gray-600 leading-relaxed max-w-3xl">
           {c.tagline}
         </p>
       </header>
@@ -69,7 +69,7 @@ export default function ServiceDetail({ slug }: { slug: string }) {
               key={i}
               className="flex items-start gap-3 rounded-xl border border-gray-100 bg-gray-50/60 p-4"
             >
-              <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-violet-600 text-white flex items-center justify-center">
+              <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-brand-600 text-white flex items-center justify-center" aria-hidden>
                 <CheckIcon />
               </span>
               <span className="text-sm text-gray-700 leading-relaxed">{cap}</span>
@@ -88,10 +88,10 @@ export default function ServiceDetail({ slug }: { slug: string }) {
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2.5 pl-5 pr-3 py-2.5 rounded-full bg-rose-50 text-gray-900 font-semibold text-sm hover:bg-rose-100 transition-colors group"
+          className="btn btn-soft group"
         >
           {t.serviceDetail.ctaButton}
-          <span className="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center text-gray-700">
+          <span className="btn-chip border border-gray-300 text-gray-700">
             <ArrowIcon />
           </span>
         </Link>
@@ -105,7 +105,7 @@ export default function ServiceDetail({ slug }: { slug: string }) {
           </h2>
           <Link
             href="/#research"
-            className="text-sm font-medium text-violet-600 hover:text-violet-800 transition-colors"
+            className="text-sm font-medium text-brand-600 hover:text-brand-800 transition-colors"
           >
             {t.serviceDetail.backToServices}
           </Link>
@@ -120,7 +120,7 @@ export default function ServiceDetail({ slug }: { slug: string }) {
               <span className="text-base font-semibold text-gray-900 group-hover:text-white transition-colors">
                 {o.title}
               </span>
-              <span className="mt-3 flex items-center gap-1.5 text-sm text-violet-600 group-hover:text-rose-300 transition-colors">
+              <span className="mt-3 flex items-center gap-1.5 text-sm text-brand-600 group-hover:text-accent-300 transition-colors">
                 {t.serviceDetail.ctaButton}
                 <ArrowIcon />
               </span>

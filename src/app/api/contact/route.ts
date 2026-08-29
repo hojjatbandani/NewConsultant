@@ -44,7 +44,7 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL || "Mohammed@t4id.com";
+  const to = process.env.CONTACT_TO_EMAIL || "team@t4id.com";
   // Must be a verified domain in Resend. `onboarding@resend.dev` works for
   // testing but only delivers to the Resend account owner's address.
   const from = process.env.CONTACT_FROM_EMAIL || "Horizons Website <onboarding@resend.dev>";

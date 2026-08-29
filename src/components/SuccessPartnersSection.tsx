@@ -36,10 +36,10 @@ export default function SuccessPartnersSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="partners" className="bg-white py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8">
+    <section id="partners" className="bg-white py-16 sm:py-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Heading */}
-        <h2 className="text-5xl font-light text-gray-900 text-center mb-14 tracking-tight">
+        <h2 className="section-title text-gray-900 text-center mb-12">
           {t.partners.heading}
         </h2>
       </div>
@@ -76,7 +76,7 @@ function MarqueeRow({ logos, reverse }: { logos: string[]; reverse?: boolean }) 
           <div className="relative h-20 sm:h-24 w-44 sm:w-52">
             <Image
               src={`/images/logos/${file}`}
-              alt={i < logos.length ? `Partner logo` : ""}
+              alt={i < logos.length ? `${file.replace(/\.[a-z]+$/i, "")} logo` : ""}
               fill
               sizes="208px"
               className="object-contain grayscale opacity-70 transition duration-300 hover:grayscale-0 hover:opacity-100"

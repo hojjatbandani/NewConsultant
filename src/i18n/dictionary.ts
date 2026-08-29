@@ -10,6 +10,11 @@ export const dictionary = {
       partners: "Partners",
       contact: "Contact",
       freeConsultation: "Free Consultation",
+      skipToContent: "Skip to main content",
+      primary: "Primary",
+      language: "Language",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
     },
     hero: {
       badge: "On demand live support",
@@ -128,6 +133,9 @@ export const dictionary = {
     },
     contact: {
       heading: "Contact Us",
+      cta: "Send us a message",
+      phoneLabel: "Phone",
+      emailLabel: "Email",
     },
     footer: {
       aboutHeading: "About Us",
@@ -137,6 +145,8 @@ export const dictionary = {
       privacy: "Privacy policy",
       terms: "Terms and conditions",
       copyright: "Copyright",
+      contactHeading: "Get in touch",
+      rights: "All rights reserved.",
     },
     serviceDetail: {
       breadcrumbHome: "Home",
@@ -205,6 +215,8 @@ export const dictionary = {
         errorText: "Your message could not be sent. Please try again or email us directly.",
         required: "This field is required",
         invalidEmail: "Please enter a valid email address",
+        sendAnother: "Send another message",
+        errorSummary: "Please fix the highlighted fields.",
       },
     },
   },
@@ -218,6 +230,11 @@ export const dictionary = {
       partners: "الشركاء",
       contact: "اتصل بنا",
       freeConsultation: "استشارة مجانية",
+      skipToContent: "تخطّي إلى المحتوى الرئيسي",
+      primary: "التنقل الرئيسي",
+      language: "اللغة",
+      openMenu: "فتح القائمة",
+      closeMenu: "إغلاق القائمة",
     },
     hero: {
       badge: "الدعم المباشر عند الطلب",
@@ -336,6 +353,9 @@ export const dictionary = {
     },
     contact: {
       heading: "اتصل بنا",
+      cta: "أرسل لنا رسالة",
+      phoneLabel: "الهاتف",
+      emailLabel: "البريد الإلكتروني",
     },
     footer: {
       aboutHeading: "من نحن",
@@ -345,6 +365,8 @@ export const dictionary = {
       privacy: "سياسة الخصوصية",
       terms: "الشروط والأحكام",
       copyright: "حقوق النشر",
+      contactHeading: "تواصل معنا",
+      rights: "جميع الحقوق محفوظة.",
     },
     serviceDetail: {
       breadcrumbHome: "الرئيسية",
@@ -412,6 +434,8 @@ export const dictionary = {
         errorText: "تعذّر إرسال رسالتك. يرجى المحاولة مجددًا أو مراسلتنا مباشرة.",
         required: "هذا الحقل مطلوب",
         invalidEmail: "يرجى إدخال بريد إلكتروني صحيح",
+        sendAnother: "إرسال رسالة أخرى",
+        errorSummary: "يرجى تصحيح الحقول المميّزة.",
       },
     },
   },

@@ -26,10 +26,12 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white overflow-x-clip">
+    <>
       <Navbar />
-      <ContactPageContent />
+      <main id="main-content" className="min-h-screen bg-white">
+        <ContactPageContent />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
