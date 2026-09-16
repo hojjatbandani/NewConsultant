@@ -4,7 +4,7 @@
 // desktop. The number must be in international format with no "+", spaces, or
 // dashes. Override via NEXT_PUBLIC_WHATSAPP_NUMBER if the company number changes.
 
-const NUMBER = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "96894706981").replace(
+const NUMBER = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "96896945570").replace(
   /[^\d]/g,
   "",
 );

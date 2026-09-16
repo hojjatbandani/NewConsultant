@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Payment Required</title>
+  <style>
+    /* Self-contained — needs no external assets, so it renders even while the
+       rest of the site is gated. */
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #1f66b8 0%, #0a2b50 55%, #071d38 100%);
+      color: #eaf1fb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .card {
+      width: 100%;
+      max-width: 30rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 1.25rem;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(6px);
+    }
+    .lock {
+      width: 56px; height: 56px;
+      margin: 0 auto 1.25rem;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .lock svg { width: 28px; height: 28px; stroke: #d8e9f9; }
+    h1 { margin: 0 0 0.75rem; font-size: 1.6rem; letter-spacing: -0.01em; }
+    p { margin: 0.4rem 0; color: #c9dcf3; line-height: 1.55; }
+    .divider { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.85rem; color: rgba(201, 220, 243, 0.7); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="lock" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="11" width="16" height="9" rx="2"></rect>
+        <path d="M8 11V8a4 4 0 1 1 8 0v3"></path>
+      </svg>
+    </div>
+    <h1>Payment Required</h1>
+    <p>This website is currently unavailable because the project license is inactive.</p>
+    <p>Please contact the project administrator to restore access.</p>
+    <div class="divider">We apologize for the inconvenience.</div>
+  </main>
+</body>
+</html>

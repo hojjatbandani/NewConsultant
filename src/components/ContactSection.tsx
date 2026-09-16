@@ -57,6 +57,12 @@ export default function ContactSection() {
             >
               Mohammed@t4id.com
             </a>
+            <a
+              href="mailto:team@t4id.com"
+              className="text-white text-lg font-light hover:text-rose-300 transition-colors"
+            >
+              team@t4id.com
+            </a>
           </div>
         </div>
       </div>

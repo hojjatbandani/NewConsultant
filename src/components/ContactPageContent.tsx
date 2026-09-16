@@ -43,7 +43,9 @@ export default function ContactPageContent() {
 
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
+      // Static hosting has no Node API route, so the form posts to a small PHP
+      // mail handler that ships in public/ (see public/contact.php).
+      const res = await fetch("/contact.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -80,7 +82,8 @@ export default function ContactPageContent() {
               <a href="tel:+96897676022" className="block hover:text-rose-300 transition-colors">+968 9767 6022</a>
             </InfoRow>
             <InfoRow label={p.emailLabel}>
-              <a href="mailto:Mohammed@t4id.com" className="hover:text-rose-300 transition-colors">Mohammed@t4id.com</a>
+              <a href="mailto:Mohammed@t4id.com" className="block hover:text-rose-300 transition-colors">Mohammed@t4id.com</a>
+              <a href="mailto:team@t4id.com" className="block hover:text-rose-300 transition-colors">team@t4id.com</a>
             </InfoRow>
             <InfoRow label={p.hoursLabel}>
               <span className="text-gray-300">{p.hours}</span>

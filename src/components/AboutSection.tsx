@@ -23,8 +23,8 @@ export default function AboutSection() {
           <Image
             src="/images/About Hero.png"
             alt="Horizons team — 10+ years working experience"
-            width={668}
-            height={595}
+            width={1329}
+            height={1183}
             className="w-full h-auto object-contain"
           />
         </div>
