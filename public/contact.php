@@ -15,7 +15,7 @@
  */
 
 $TO   = 'team@t4id.com';               // <-- where messages are delivered
-$FROM = 'noreply@hrz-stat.com';        // <-- must exist on your domain
+$FROM = 'info@hrz-stat.com';        // <-- must exist on your domain
 
 header('Content-Type: application/json; charset=utf-8');
 

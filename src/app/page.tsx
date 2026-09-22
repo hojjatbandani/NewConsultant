@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import VisionMissionSection from "@/components/VisionMissionSection";
 import TechnicalSolutionsSection from "@/components/TechnicalSolutionsSection";
 import AcademicServicesSection from "@/components/AcademicServicesSection";
 import ResearchServicesSection from "@/components/ResearchServicesSection";
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <Reveal><HeroSection /></Reveal>
       <Reveal><AboutSection /></Reveal>
+      <Reveal><VisionMissionSection /></Reveal>
       <Reveal><TechnicalSolutionsSection /></Reveal>
       <Reveal><AcademicServicesSection /></Reveal>
       <Reveal><ResearchServicesSection /></Reveal>

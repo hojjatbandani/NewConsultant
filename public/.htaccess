@@ -1,10 +1,9 @@
 # ============================================================================
-#  PAYMENT PROTECTION / LICENSE LOCK  —  Apache routing
+#  Apache config for the static Next.js export (SiteGround)
 # ============================================================================
-#  Routes every PAGE request through guard.php (which enforces the license),
-#  while letting static assets and the PHP handlers be served directly.
-#  To disable the lock entirely, remove the "LICENSE LOCK" block below; the
-#  static site will then be served normally by Apache.
+#  The site is plain HTML/CSS/JS exported to public_html. Pages live at
+#  <route>/index.html (trailingSlash), so Apache serves clean URLs natively.
+#  contact.php is the only server-side script (contact form mail handler).
 # ============================================================================
 
 Options -Indexes
@@ -12,22 +11,6 @@ Options -Indexes
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # ---- LICENSE LOCK (remove this whole block to disable the gate) ----------
-
-  # 1) Let the PHP handlers run directly (form endpoint + the guard itself,
-  #    so a direct hit to guard.php doesn't loop back onto itself).
-  RewriteRule ^(guard|contact)\.php$ - [L]
-
-  # 2) Never expose the license config file to the browser.
-  RewriteRule ^license\.php$ - [F]
-
-  # 3) Serve real static assets directly (matched by file extension). This
-  #    covers /_next/*, images, fonts, favicon, robots.txt, sitemap.xml, etc.
-  RewriteCond %{REQUEST_URI} \.(css|js|mjs|json|map|png|jpe?g|gif|svg|webp|avif|ico|woff2?|ttf|eot|otf|txt|xml|webmanifest|mp4|webm|pdf)$ [NC]
-  RewriteRule ^ - [L]
-
-  # 4) Everything else (page navigations) goes through the license gate.
-  RewriteRule ^ guard.php [L]
-
-  # ---- end LICENSE LOCK ----------------------------------------------------
+  # Missing page -> exported 404 page.
+  ErrorDocument 404 /404.html
 </IfModule>

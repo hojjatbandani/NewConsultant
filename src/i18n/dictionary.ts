@@ -160,6 +160,21 @@ export const dictionary = {
       backToServices: "Back to all services",
       otherServices: "Other research services",
     },
+    visionMission: {
+      heading: "Vision, Mission & Values",
+      lead: "The principles that guide our work and the impact we aim to make.",
+      visionTitle: "Our Vision",
+      visionText: "Global leadership in statistical research and consulting.",
+      missionTitle: "Our Mission",
+      missionText:
+        "A statistical and research consulting firm that provides tools for organizations to enhance data analysis and decision-making.",
+      valuesTitle: "Our Values",
+      values: [
+        "Creativity and Innovation",
+        "Integrity and Confidentiality",
+        "Cooperation and Partnership",
+      ],
+    },
     aboutPage: {
       badge: "About Us",
       heading: "About Horizons",
@@ -171,16 +186,15 @@ export const dictionary = {
       ],
       missionTitle: "Our Mission",
       missionText:
-        "To make a tangible impact in the field of consulting by providing accurate, reliable, and actionable statistical and research solutions.",
+        "A statistical and research consulting firm that provides tools for organizations to enhance data analysis and decision-making.",
       visionTitle: "Our Vision",
       visionText:
-        "To be the trusted research partner for organizations that want to base every important decision on solid evidence.",
+        "Global leadership in statistical research and consulting.",
       valuesTitle: "Our Values",
       values: [
-        { title: "Accuracy", desc: "Rigorous methods and quality control at every step." },
-        { title: "Confidentiality", desc: "Your data is handled securely, ethically, and privately." },
-        { title: "Innovation", desc: "Modern tools and approaches tailored to each project." },
-        { title: "Partnership", desc: "We work alongside you from first question to final decision." },
+        { title: "Creativity and Innovation", desc: "Modern tools and fresh approaches tailored to each project." },
+        { title: "Integrity and Confidentiality", desc: "Your data is handled honestly, securely, and privately." },
+        { title: "Cooperation and Partnership", desc: "We work alongside you from first question to final decision." },
       ],
       ctaTitle: "Let's work together",
       ctaText: "Tell us about your research challenge and we'll show you how we can help.",
@@ -238,18 +252,18 @@ export const dictionary = {
     },
     hero: {
       badge: "الدعم المباشر عند الطلب",
-      title1: "آفاق",
+      title1: "الأفاق",
       title2: "للاستشارات",
       title3: "الإحصائية",
       getStarted: "ابدأ الآن",
       learnMore: "اعرف المزيد",
       description:
-        "شركة آفاق للاستشارات الإحصائية متخصصة في تقديم الخدمات الإحصائية والبحثية.",
+        "شركة الأفاق للاستشارات الإحصائية متخصصة في تقديم الخدمات الإحصائية والبحثية.",
     },
     about: {
-      heading: "عن آفاق",
+      heading: "عن الأفاق",
       paragraph:
-        "شركة آفاق للاستشارات الإحصائية متخصصة في تقديم الخدمات الإحصائية والبحثية، وتهدف إلى دعم الأفراد والمؤسسات في تحليل البيانات واتخاذ القرارات بناءً على منهجيات علمية دقيقة. وتسعى الشركة إلى إحداث أثر ملموس في مجال الاستشارات من خلال تقديم حلول متكاملة تجمع بين الابتكار والسرية والدقة، وتخدم مختلف القطاعات الأكاديمية والمؤسسية.",
+        "شركة الأفاق للاستشارات الإحصائية متخصصة في تقديم الخدمات الإحصائية والبحثية، وتهدف إلى دعم الأفراد والمؤسسات في تحليل البيانات واتخاذ القرارات بناءً على منهجيات علمية دقيقة. وتسعى الشركة إلى إحداث أثر ملموس في مجال الاستشارات من خلال تقديم حلول متكاملة تجمع بين الابتكار والسرية والدقة، وتخدم مختلف القطاعات الأكاديمية والمؤسسية.",
       button: "اقرأ المزيد عنا",
     },
     technical: {
@@ -360,7 +374,7 @@ export const dictionary = {
     footer: {
       aboutHeading: "من نحن",
       aboutText:
-        "شركة آفاق للاستشارات الإحصائية متخصصة في تقديم الخدمات الإحصائية والبحثية، وتساعد الأفراد والمؤسسات على اتخاذ قرارات دقيقة قائمة على البيانات عبر حلول مبتكرة وسرية وموثوقة في القطاعين الأكاديمي والمؤسسي.",
+        "شركة الأفاق للاستشارات الإحصائية متخصصة في تقديم الخدمات الإحصائية والبحثية، وتساعد الأفراد والمؤسسات على اتخاذ قرارات دقيقة قائمة على البيانات عبر حلول مبتكرة وسرية وموثوقة في القطاعين الأكاديمي والمؤسسي.",
       quickLinks: "روابط سريعة",
       privacy: "سياسة الخصوصية",
       terms: "الشروط والأحكام",
@@ -379,27 +393,41 @@ export const dictionary = {
       backToServices: "العودة إلى كل الخدمات",
       otherServices: "خدمات أبحاث أخرى",
     },
+    visionMission: {
+      heading: "رؤيتنا ورسالتنا وقيمنا",
+      lead: "المبادئ التي توجّه عملنا والأثر الذي نسعى إلى تحقيقه.",
+      visionTitle: "رؤيتنا",
+      visionText: "الريادة العالمية في البحوث والاستشارات الإحصائية.",
+      missionTitle: "رسالتنا",
+      missionText:
+        "شركة استشارات إحصائية وبحثية توفّر الأدوات التي تمكّن المؤسسات من تعزيز تحليل البيانات واتخاذ القرار.",
+      valuesTitle: "قيمنا",
+      values: [
+        "الإبداع والابتكار",
+        "النزاهة والسرية",
+        "التعاون والشراكة",
+      ],
+    },
     aboutPage: {
       badge: "من نحن",
-      heading: "عن آفاق",
-      lead: "تساعد شركة آفاق للاستشارات الإحصائية الأفراد والمؤسسات على تحويل البيانات إلى قرارات واثقة.",
+      heading: "عن الأفاق",
+      lead: "تساعد شركة الأفاق للاستشارات الإحصائية الأفراد والمؤسسات على تحويل البيانات إلى قرارات واثقة.",
       paragraphs: [
-        "شركة آفاق للاستشارات الإحصائية متخصصة في تقديم الخدمات الإحصائية والبحثية. ندعم الأفراد والمؤسسات في تحليل البيانات واتخاذ القرارات استنادًا إلى منهجيات علمية دقيقة.",
+        "شركة الأفاق للاستشارات الإحصائية متخصصة في تقديم الخدمات الإحصائية والبحثية. ندعم الأفراد والمؤسسات في تحليل البيانات واتخاذ القرارات استنادًا إلى منهجيات علمية دقيقة.",
         "نمزج الابتكار والسرية والدقة لتقديم حلول متكاملة في القطاعين الأكاديمي والمؤسسي — من تصميم الدراسة وجمع البيانات إلى التحليل والتفسير وإعداد التقارير.",
         "يجمع فريقنا إحصائيين وباحثين ومختصين ميدانيين يهتمّون بدقة المنهج بقدر اهتمامهم بوضوح النتيجة. ونقيس نجاحنا بالقرارات التي يستطيع عملاؤنا اتخاذها بثقة.",
       ],
       missionTitle: "رسالتنا",
       missionText:
-        "إحداث أثر ملموس في مجال الاستشارات عبر تقديم حلول إحصائية وبحثية دقيقة وموثوقة وقابلة للتنفيذ.",
+        "شركة استشارات إحصائية وبحثية توفّر الأدوات التي تمكّن المؤسسات من تعزيز تحليل البيانات واتخاذ القرار.",
       visionTitle: "رؤيتنا",
       visionText:
-        "أن نكون شريك البحث الموثوق للمؤسسات التي تريد أن تبني كل قرار مهم على أدلة متينة.",
+        "الريادة العالمية في البحوث والاستشارات الإحصائية.",
       valuesTitle: "قيمنا",
       values: [
-        { title: "الدقة", desc: "أساليب صارمة وضبط جودة في كل خطوة." },
-        { title: "السرية", desc: "تُعالَج بياناتك بأمان وأخلاقية وخصوصية." },
-        { title: "الابتكار", desc: "أدوات ومقاربات حديثة مصمّمة لكل مشروع." },
-        { title: "الشراكة", desc: "نعمل إلى جانبك من أول سؤال حتى القرار النهائي." },
+        { title: "الإبداع والابتكار", desc: "أدوات حديثة ومقاربات مبتكرة مصمّمة لكل مشروع." },
+        { title: "النزاهة والسرية", desc: "تُعالَج بياناتك بصدق وأمان وخصوصية." },
+        { title: "التعاون والشراكة", desc: "نعمل إلى جانبك من أول سؤال حتى القرار النهائي." },
       ],
       ctaTitle: "لنعمل معًا",
       ctaText: "أخبرنا عن تحدّي بحثك وسنوضّح لك كيف يمكننا المساعدة.",
