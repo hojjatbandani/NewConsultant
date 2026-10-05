@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 const cards = [
-  { image: "/images/Service 1.jpg", alt: "Analytics dashboard with CTR metrics" },
+  { image: "/images/Call Centre Training.jpg", alt: "Call centre agent on a customer call" },
   { image: "/images/Service 2.jpg", alt: "Person holding phone in store" },
   { image: "/images/Service 3.jpg", alt: "Hands pointing at charts and reports" },
 ];

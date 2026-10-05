@@ -26,7 +26,7 @@ export default function AboutPageContent() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
         <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-sm">
           <Image
-            src="/images/About Image.jpg"
+            src="/images/Training Session.jpg"
             alt={a.heading}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"

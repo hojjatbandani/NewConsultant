@@ -53,13 +53,17 @@ export default function TechnicalSolutionsSection() {
               {t.technical.callTitle}
             </h3>
 
-            {/* Call centre photo */}
+            {/* Call centre video (muted so browsers allow autoplay) */}
             <div className="rounded-3xl overflow-hidden bg-gray-800 aspect-4/3">
-              <Image
-                src="/images/Technical Solution Image 2.png"
-                alt={t.technical.callTitle}
-                width={640}
-                height={480}
+              <video
+                src="/video.mp4"
+                poster="/images/Call Centre Video Poster.jpg"
+                aria-label={t.technical.callTitle}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
                 className="w-full h-full object-cover"
               />
             </div>

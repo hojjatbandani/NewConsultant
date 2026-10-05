@@ -24,10 +24,10 @@ export default function ContactSection() {
       >
         {/* Background image */}
         <Image
-          src="/images/Contactus.jpg"
-          alt="Person working at desk"
+          src="/images/Training Room.jpg"
+          alt="Training session at our office"
           fill
-          className="object-cover object-center"
+          className="object-cover object-[50%_30%]"
         />
 
         {/* Dark overlay */}
